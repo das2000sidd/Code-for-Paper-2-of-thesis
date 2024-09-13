@@ -118,63 +118,7 @@ counts_use$split_gene_ids=split_gene_ids$Ensembl_ID
 
 check_for_repeat_ids = as.data.frame(table(counts_use$split_gene_ids))
 
-#counts_X_Y_genes=subset(counts_use,counts_use$split_gene_ids %in% chrX_Y_genes$ensembl_gene_id)
 
-#counts_X_Y_genes_with_chr_info=left_join(counts_X_Y_genes,chrX_Y_genes,by=c("split_gene_ids"="ensembl_gene_id"))
-
-#rownames(counts_X_Y_genes_with_chr_info)=counts_X_Y_genes_with_chr_info$Gene
-
-
-#counts_X_Y_genes_with_chr_info=counts_X_Y_genes_with_chr_info[,-c(177,178)]
-
-#X_chr_samples=subset(counts_X_Y_genes_with_chr_info,counts_X_Y_genes_with_chr_info$chromosome_name=="X")
-#Y_chr_samples=subset(counts_X_Y_genes_with_chr_info,counts_X_Y_genes_with_chr_info$chromosome_name=="Y")
-
-#X_chr_samples=X_chr_samples[,-c(177)]
-#Y_chr_samples=Y_chr_samples[,-c(177)]
-
-#X_chr_samples=t(X_chr_samples)
-#Y_chr_samples=t(Y_chr_samples)
-
-#sum_X_chr_reads_by_sample=apply(X_chr_samples,1,sum)
-#sum_Y_chr_reads_by_sample=apply(Y_chr_samples,1,sum)
-
-#sum_X_chr_reads_by_sample=as.data.frame(sum_X_chr_reads_by_sample)
-#sum_Y_chr_reads_by_sample=as.data.frame(sum_Y_chr_reads_by_sample)
-
-#sum_X_Y_chr_reads_by_sample=cbind(sum_X_chr_reads_by_sample,sum_Y_chr_reads_by_sample)
-
-#sum_X_Y_chr_reads_by_sample$Ratio_of_X_by_Y = sum_X_Y_chr_reads_by_sample$sum_X_chr_reads_by_sample / sum_X_Y_chr_reads_by_sample$sum_Y_chr_reads_by_sample
-
-
-#plot(sum_X_Y_chr_reads_by_sample$sum_Y_chr_reads_by_sample,sum_X_Y_chr_reads_by_sample$Ratio_of_X_by_Y)
-
-#sum_X_Y_chr_reads_by_sample$Sample_Id=rownames(sum_X_Y_chr_reads_by_sample)
-
-#pheno_of_interest_X_Y_assesment = left_join(pheno_of_interest,sum_X_Y_chr_reads_by_sample,by=c("RNA_Id"="Sample_Id"))
-
-#pheno_of_interest_X_Y_assesment$GENDER=as.factor(pheno_of_interest_X_Y_assesment$GENDER)
-
-#boxplot(pheno_of_interest_X_Y_assesment$GENDER,pheno_of_interest_X_Y_assesment$Ratio_of_X_by_Y) ## Based on this, 1 is male and 2 is female
-
-
-#gender_1=subset(pheno_of_interest_X_Y_assesment,pheno_of_interest_X_Y_assesment$GENDER==1)
-#gender_2=subset(pheno_of_interest_X_Y_assesment,pheno_of_interest_X_Y_assesment$GENDER==2)
-
-
-#summary(gender_1$Ratio_of_X_by_Y)
-#summary(gender_2$Ratio_of_X_by_Y)
-
-
-#pheno_of_interest_X_Y_assesment$GENDER=as.integer(pheno_of_interest_X_Y_assesment$GENDER)
-
-#plot(pheno_of_interest_X_Y_assesment$GENDER,pheno_of_interest_X_Y_assesment$Ratio_of_X_by_Y) ## 
-
-
-#length(intersect(pheno_of_interest_X_Y_assesment$RNA_Id,colnames(counts_use[,-c(177:178)])))
-
-
-#rownames(pheno_of_interest_X_Y_assesment)=pheno_of_interest_X_Y_assesment$RNA_Id
 
 pheno_order=pheno_of_interest$RNA_Id
 
@@ -208,7 +152,6 @@ sum(is.na(cov_mod1$agechild9))
 
 cov_mod1$GENDER=as.factor(cov_mod1$GENDER)
 
-## first analysing with DESeq2
 
 library(edgeR)
 
