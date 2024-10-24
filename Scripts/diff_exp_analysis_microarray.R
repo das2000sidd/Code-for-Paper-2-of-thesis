@@ -90,11 +90,8 @@ var.all.pCs=apply(eigen.vector.946,2,var)
 
 ## MUST GET RID OF THE TWO SAMPLES "X40633A","X35039A" AS THEY MESS UP THE FOLLOWING ANALYSIS
 boxplot(bryois_known_probe[,c(1:50)])
-## Using inter-array correlation to remove samples as by Langfelder paper "Functional Organization of the Transcriptome in Human Brain"
 
 
-library(WGCNA)
-## Following: https://github.com/icnn/Microarray-Tutorials/wiki/Illumina
 
 ## QC on raw data in form of MDS plot
 bryois_known_probe_5=t(bryois_known_probe)
@@ -126,11 +123,6 @@ hist(IAC,sub=paste("Mean=",format(mean(IAC[upper.tri(IAC)]),digits=3)))
 
 cluster1 = hclust(as.dist(1-IAC),method="average")
 plot(cluster1,cex=0.7,labels=dimnames(bryois_known_probe_5)[[2]])
-
-
-
-
-
 
 
 ## Outlier detection is done and now quantile normalisation
@@ -200,7 +192,7 @@ sum(is.na(pheno_for_samples_with_gene_exp$no2_9))*100/nrow(pheno_for_samples_wit
 sum(is.na(pheno_for_samples_with_gene_exp$pm10_9))*100/nrow(pheno_for_samples_with_gene_exp)
 sum(is.na(pheno_for_samples_with_gene_exp$age_9y))*100/nrow(pheno_for_samples_with_gene_exp)
 
-## first running with gender, age, areases_quint_9
+## first running with gender, age and then a
 air_pol_lipid=pheno_for_samples_with_gene_exp[,c("ge_ht12_g1","cidB3777","Exp_id","no2_9","pm25_9","pm10_9","kz021","age_9y","CHOL_F9","trig_f9","HDL_f9","LDL_f9","VLDL_f9","CRP_f9","IL6_f9")]
 rownames(air_pol_lipid)=air_pol_lipid$Exp_id
 View(as.data.frame(table(air_pol_lipid$cidB3777)))
