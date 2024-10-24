@@ -857,9 +857,9 @@ no2_probe_gene$Entrez=as.character(no2_probe_gene$Entrez)
 
 
 
-write.table(no2_probe_gene,file="Association_of_NO2_with_gene_expression_adjusted_age9y_gender_maternaledu_areaSES_no_chr_X_Y_cubin_spline_model.txt",col.names = T,row.names = F,sep="\t",quote = F)
-write.table(pm25_probe_gene,file="Association_of_PM25_with_gene_expression_adjusted_age9y_gender_maternaledu_areaSES_no_chr_X_Y_cubin_spline_model.txt",col.names = T,row.names = F,sep="\t",quote = F)
-write.table(pm10_probe_gene,file="Association_of_PM10_with_gene_expression_adjusted_age9y_gender_maternaledu_areaSES_no_chr_X_Y_cubin_spline_model.txt",col.names = T,row.names = F,sep="\t",quote = F)
+write.table(no2_probe_gene,file="Association_of_NO2_with_gene_expression_adjusted_age9y_gender_maternaledu_areaSES_no_chr_X_Y.txt",col.names = T,row.names = F,sep="\t",quote = F)
+write.table(pm25_probe_gene,file="Association_of_PM25_with_gene_expression_adjusted_age9y_gender_maternaledu_areaSES_no_chr_X_Y.txt",col.names = T,row.names = F,sep="\t",quote = F)
+write.table(pm10_probe_gene,file="Association_of_PM10_with_gene_expression_adjusted_age9y_gender_maternaledu_areaSES_no_chr_X_Y.txt",col.names = T,row.names = F,sep="\t",quote = F)
 
 
 #pm10_sig=subset(pm10_probe_gene,pm10_probe_gene$adj.P.Val < 0.05)
