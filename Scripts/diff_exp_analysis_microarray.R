@@ -854,37 +854,6 @@ write.table(pm25_probe_gene,file="Association_of_PM25_with_gene_expression_adjus
 write.table(pm10_probe_gene,file="Association_of_PM10_with_gene_expression_adjusted_age9y_gender_maternaledu_areaSES_no_chr_X_Y.txt",col.names = T,row.names = F,sep="\t",quote = F)
 
 
-#pm10_sig=subset(pm10_probe_gene,pm10_probe_gene$adj.P.Val < 0.05)
-
-#pm10_all_genes=unique(pm10_probe_gene$Entrez)
-#pm10_sig_genes=unique(pm10_sig$Entrez)
-
-
-## KEGG enrichment
-#library(clusterProfiler)
-#kk <- enrichKEGG(gene         = pm10_sig_genes,
- #                organism     = 'hsa',
- #                pvalueCutoff = 0.05)
-
-
-
-#pm10_go <- enrichGO(gene          = pm10_sig_genes,
-      #              universe      = pm10_all_genes,
-      #              OrgDb         = org.Hs.eg.db,
-      #              ont           = "ALL",
-       #             pAdjustMethod = "BH",
-       #             pvalueCutoff  = 0.01,
-       #             qvalueCutoff  = 0.05,
-        #            readable      = TRUE,
-        #            keyType = "ENTREZID")
-##View(pm10_go@result)
-#View(kk@result)
-
-
-#library(ReactomePA)
-#x <- enrichPathway(gene=pm10_sig_genes, pvalueCutoff = 0.05, readable=TRUE)
-#head(x)
-#View(x@result)
 
 
 
