@@ -1,6 +1,6 @@
 #RDatasetwd("~/data_das")
 
-setwd("~/Desktop/PhD_Project_related/GENERATION R DATA RESULTS/Data/Data/THESE RESULTS FROM LAST NOVEMBER CHECK FOR LOGICAL CONCLUSIONS")
+setwd("~/Desktop/PhD_Project_related/GENERATION R DATA RESULTS/Data/")
 library(foreign)
 library(dplyr)
 
